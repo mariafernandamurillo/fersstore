@@ -17,7 +17,7 @@ function Product(props){
             <img className="image-product" src={props.data.image} alt=""/>
 
             <div className="prices">
-                <label>Price ${props.data.price}</label>
+                <label>Price <span>${props.data.price}</span></label>
                 <label>Total $ </label>
             </div>
 

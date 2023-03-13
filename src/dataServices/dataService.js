@@ -1,39 +1,54 @@
 var catalog = [
     {
-        "title": "Product 1",
-        "category":"Category N",
+        "title": "Meredith",
+        "category":"Pouch",
         "price":499,
         "image":"../images/purse_one.jpg",
         "_id":"1dfgdffg"
     },
     {
-        "title": "Product 2",
-        "category":"Category N",
+        "title": "Izzie",
+        "category":"Clutch",
         "price":249,
         "image":"../images/purse_two.jpg",
         "_id":"2dfgdffg"
     },
     {
-        "title": "Product 3",
-        "category":"Category N",
+        "title": "Lexie",
+        "category":"Shoulder Bag",
         "price":399,
         "image":"../images/purse_three.jpg",
         "_id":"3dfgdffg"
     },
     {
-        "title": "Product 4",
-        "category":"Category N",
+        "title": "Arizona",
+        "category":"Handbag",
         "price":399,
         "image":"../images/purse_four.jpg",
         "_id":"4dfgdffg"
     },
     {
-        "title": "Product 5",
-        "category":"Category N",
+        "title": "Cristina",
+        "category":"Clutch",
         "price":699,
         "image":"../images/purse_five.jpg",
         "_id":"5dfgdffg"
+    },
+    {
+        "title": "Miranda",
+        "category":"Handbag",
+        "price":399,
+        "image":"../images/purse_six.jpg",
+        "_id":"6dfgdffg"
+    },
+    {
+        "title": "Calliope",
+        "category":"Shoulder Bag",
+        "price":399,
+        "image":"../images/purse_seven.jpg",
+        "_id":"7dfgdffg"
     }
+
 ];
 
 /* Create a class for DataServices*/

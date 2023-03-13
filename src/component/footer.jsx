@@ -1,5 +1,8 @@
+import "./footer.css"
 function Footer(){
-    return <div>By Fernanda Murillo</div>;
+    return <div className="footer-component">
+        <label>By Fernanda Murillo</label>
+    </div>;
 }
 
 export default Footer;

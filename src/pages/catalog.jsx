@@ -13,6 +13,9 @@ function Catalog() {
       an emppty array as initial value (in case the catalog is empty)*/}
     const [products, setProducts] = useState([]);
 
+    {/*Variable for the Key of the products */}
+    const [category, setCategory] = useState([]);
+
     /*When the component load, do somenthin. 
     That is why we are using useEffect*/
     useEffect(function () {
@@ -27,6 +30,25 @@ function Catalog() {
         let prods = service.getProducts();
         console.log(prods);
         setProducts(prods); //Passing the values through  the useState
+
+        let cats = ["Pouch", "Clutch", "Shoulder Bag", "Handbag"];
+        setCategory(cats); //Passing the categories
+    }
+
+    function filter(category){
+        console.log(category);
+
+        let list = [];
+
+        /*Find the products of the category and added them to the list */
+        for(let i=0; i<products.length;i++){
+            let prod = products[i];
+            if(prod.category == category){
+                list.push(prod);
+            }
+        }
+
+        console.log(list);
     }
 
     return (
@@ -44,10 +66,15 @@ function Catalog() {
             {/*We can not use for loop in JSX
             We are going to use map to print/transform the 
             number of products of the catalog*/}
-            {products.map((p) => (
-                <Product data = {p}></Product>
-                ))}
+            {/*We need to add the ket to the products, but we can not use key={1}
+            we need to use an state variable*/}
+            <br></br>
+            {/*Here we added a btn-filter class of bootstrap, but I am not using boostrap*/}
+            {category.map(c => <button onClick={()=>filter(c)} className="category-btn">{c}</button>)}
+            <br></br>
 
+            {products.map((p) => (<Product key={p._id} data = {p}></Product>))}
+            
         </div>
     );
 }
