@@ -1,7 +1,7 @@
 import "./quantityPicker.css";
 import { useState } from "react";
 
-function QuantityPicker(){
+function QuantityPicker(props){
 
     //Create an state variable
     //Name = quantity
@@ -14,12 +14,14 @@ function QuantityPicker(){
         if(quantity===1) return; //Avoid negative values
         let val = quantity - 1; //Decrease de quantity
         setQuantity(val); //Set the value
+        props.onChange(val); //modifyinbg the parent component
     }
 
     function increase(){
         console.log("Increase");
         let val = quantity + 1; //Increase one by one
         setQuantity(val); //Add the value
+        props.onChange(val); //modifyinbg the parent component
     }
 
     return (

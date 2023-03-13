@@ -16,6 +16,11 @@ function Catalog() {
     {/*Variable for the Key of the products */}
     const [category, setCategory] = useState([]);
 
+    {/*Variable for the list of products filtered */}
+    const [prodsToDisplay, setProdsToDisplay] = useState([]);
+
+    let activeCategory = "";
+
     /*When the component load, do somenthin. 
     That is why we are using useEffect*/
     useEffect(function () {
@@ -33,12 +38,16 @@ function Catalog() {
 
         let cats = ["Pouch", "Clutch", "Shoulder Bag", "Handbag"];
         setCategory(cats); //Passing the categories
+
+        setProdsToDisplay(prods);
     }
 
     function filter(category){
         console.log(category);
 
-        let list = [];
+        activeCategory = category;
+
+        let list = []; //This works only inside the funtion, lets create an state variable.
 
         /*Find the products of the category and added them to the list */
         for(let i=0; i<products.length;i++){
@@ -48,7 +57,11 @@ function Catalog() {
             }
         }
 
-        console.log(list);
+        setProdsToDisplay(list);
+    }
+
+    function allPurses(){
+        setProdsToDisplay(products);
     }
 
     return (
@@ -70,10 +83,18 @@ function Catalog() {
             we need to use an state variable*/}
             <br></br>
             {/*Here we added a btn-filter class of bootstrap, but I am not using boostrap*/}
-            {category.map(c => <button onClick={()=>filter(c)} className="category-btn">{c}</button>)}
+            <button onClick={allPurses} className="category-btn">All purses</button>
+
+            {category.map(c => <button key={c} onClick={()=>filter(c)} className="category-btn">{c}</button>)}
             <br></br>
 
-            {products.map((p) => (<Product key={p._id} data = {p}></Product>))}
+            {/*Displaying all the products
+            {products.map((p) => (<Product key={p._id} data = {p}></Product>))}*/}
+
+            {/*Displaying the products by categories*/}
+            {prodsToDisplay.map((p) => (<Product key={p._id} data = {p}></Product>))}
+
+
             
         </div>
     );
