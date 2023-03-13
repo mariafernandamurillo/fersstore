@@ -24,13 +24,13 @@ function QuantityPicker(){
 
     return (
         //Add the HTML elements
-        <div>
-            <button onClick={decrease}>-</button>
+        <div className="qt-picker">
+            <button className="btn-qt" onClick={decrease}>-</button>
 
             {/* Show the quantity in the label */}   
             <label>{quantity}</label>
             
-            <button onClick={increase}>+</button>
+            <button className="btn-qt" onClick={increase}>+</button>
         </div>
     )
 }
