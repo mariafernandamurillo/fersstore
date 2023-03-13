@@ -17,7 +17,7 @@ function QuantityPicker(){
     }
 
     function increase(){
-        console.log("Increase");
+        //console.log("Increase");
         let val = quantity + 1; //Increase one by one
         setQuantity(val); //Add the value
     }
