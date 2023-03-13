@@ -10,7 +10,7 @@ function QuantityPicker(){
 
     //Add the logic
     function decrease(){
-       //console.log("Decrease");
+        //console.log("Decrease");
         if(quantity===1) return; //Avoid negative values
         let val = quantity - 1; //Decrease de quantity
         setQuantity(val); //Set the value
