@@ -8,6 +8,13 @@
     background-color: #F3F3F3;
 }
 
+.product .controls{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
 .product:hover{
     border: solid #FE4543  1px;
 }
@@ -32,14 +39,16 @@ h5{
 
 .add-btn{
     margin-top: 10px;
+    margin-left: 80px;
     height: 33px;
-    width: 70px;
+    width: 50px;
     background-color: #FE4543;
     text-align: center;
     border-radius: 3px;
     border: #FE4543 solid 1px;
     color: #FFFFFF;
     font-weight: 600;
+    font-size: 16px;
 }
 
 .add-btn:hover{

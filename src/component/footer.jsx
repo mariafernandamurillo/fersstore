@@ -1,7 +1,7 @@
 import "./footer.css"
 function Footer(){
     return <div className="footer-component">
-        <label>By Fernanda Murillo</label>
+        <label>It is inspired by you</label>
     </div>;
 }
 
