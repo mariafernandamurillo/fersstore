@@ -17,6 +17,7 @@ function Navbar() {
             <Link to={"/catalog"}> Catalog</Link>
             <Link to={"/about"}> About</Link>
             <Link to={"/cart"} className="cart"><i class="fa fa-shopping-cart" aria-hidden="true"></i></Link>
+            <Link to={"/admin"}> Admin</Link>
         </nav>
 
         <div className="search">

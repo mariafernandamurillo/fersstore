@@ -66,8 +66,7 @@ function Catalog() {
 
     return (
         <div className="catalog">
-            <h2>This is my catalog</h2>
-            <h5>I have {products.length} new products for you!</h5> 
+            <h2>I have {products.length} new products for you!</h2> 
 
             {/*Activity class 2
             <Product></Product>
