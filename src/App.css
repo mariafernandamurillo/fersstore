@@ -53,3 +53,16 @@
   background: #FFFFFF;
   cursor: pointer;
 }
+
+.ip-search{
+  border: solid 1px #E6E6E6;
+  height: 20px;
+  border-radius: 3px;
+  padding: 5px;
+}
+
+
+.ip-search:hover{
+  border: solid 1px #FE4543;
+  
+}

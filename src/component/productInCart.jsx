@@ -1,12 +1,14 @@
 import "./productInCart.css"
+import { useState } from "react";
 
+//Receive the prod from cart component
 function ProductInCart(prod) {
-
+    
     function getTotal() {
         let total = prod.data.price * prod.data.quantity;
         return total.toFixed(2);
     }
-
+    
     return (
         <div className="ProductInCart">
             <div className="parent">
@@ -30,10 +32,6 @@ function ProductInCart(prod) {
                         </div>
 
                     </div>
-                </div>
-
-                <div className="total-to-pay">
-
                 </div>
             </div>
         </div>

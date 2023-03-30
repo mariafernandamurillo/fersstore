@@ -11,8 +11,79 @@
     margin-right: 10px;
 }
 .receipt{
-    background-color: #F3F3F3;
     flex:2;
     margin-left: 10px;
+    margin-right: 10px;
+    min-height: 450px;
+    height: max-content;
+    border: solid 1px #F3F3F3;
+    border-radius: 3px;
 }
 
+.receipt-hidden{
+    display: none;
+} 
+
+.receip-header{
+    position: relative;
+    background-color: #F3F3F3;
+    height: 80px;
+}
+
+.receipt img{
+    width: 70px;
+    position: absolute;
+    top: 5px;
+    left: 10px;
+}
+
+.order-confirmation{
+    /*Position*/
+    position: absolute;
+    top: 30px;
+    left: 170px;
+
+    /*Style*/
+    font-size: 20px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.totalToPay{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.totalToPay span{
+    font-weight: 600;
+}
+
+.totalToPay :last-child{
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-size: 25px;
+    text-decoration: un;
+}
+
+.btn-cancel{
+    margin-top: 70px;
+    margin-right: 5px;
+}
+
+.btn-pay{
+    margin-top: 30px;
+    margin-left: 5px;
+    background-color: #16B4F2;
+    border: 1px solid #16B4F2;;
+}
+
+.dicount{
+    margin-top: 50px;
+}
+
+.btn-apply{
+    margin-left: 10px;
+}

@@ -6,6 +6,9 @@ import globalContext from "../state/globalContext";
 
 function Navbar() {
 
+    /*
+     * This function is created in the global provider.
+     */
     const getNumberOfProducts = useContext(globalContext).getNumOfProducts;
 
     return <div className="nav-bar">

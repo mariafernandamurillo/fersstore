@@ -3,36 +3,64 @@ import { Provider } from "react";
 import GlobalContext from "./globalContext";
 import { useState } from "react";
 
-function GlobalProvider(props){
+function GlobalProvider(props) {
     const [cart, setCart] = useState([]);
-    const [user, setUser] = useState({name: "Fernanda", id: 1808});
+    const [user, setUser] = useState({ name: "Fernanda", id: 1808 });
 
-    function getNumOfProducts(){
+    function getNumOfProducts() {
         let total = 0;
 
-        for(let i=0; i < cart.length; i++){
+        for (let i = 0; i < cart.length; i++) {
             let prod = cart[i];
             total += prod.quantity;
         }
         return total;
     }
 
-    function addToCart(prod){
-        let copy = [...cart];
-        copy.push(prod); 
-        setCart(copy);
+    function getTotalToPay(){
+        let totalToPay = 0;
+        const cartSize = cart.length;
 
-        console.log(copy);
+        for(let i=0; i <cartSize; i++){
+            let prodPrice = cart[i];
+            totalToPay += (prodPrice.price * prodPrice.quantity);
+        }
+
+        return totalToPay;
     }
 
-    function removeFromCart(){
+    
+    function addToCart(prod) {
+        let copy = [...cart];
+        const copySize = copy.length;
+        let newProd = true;
+
+        for (let i = 0; i < copySize; i++) {
+            if (copy[i].title == prod.title) {
+                copy[i].quantity += prod.quantity;
+                newProd = false;
+            }
+        }
+
+        if(newProd){
+            copy.push(prod);
+        }
+       
+        setCart(copy);
+
+        //console.log(copy);
+    }
+
+
+    function removeFromCart() {
         console.log("global remove");
     }
 
     return <GlobalContext.Provider value={{
         cart: cart,
         user: user,
-        getNumOfProducts, getNumOfProducts, 
+        getTotalToPay, getTotalToPay,
+        getNumOfProducts, getNumOfProducts,
         addToCart: addToCart,
         removeFromCart: removeFromCart,
     }}>{props.children}</GlobalContext.Provider>;

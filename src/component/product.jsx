@@ -39,8 +39,12 @@ function Product(props) {
 
         let prodForCart = {...props.data};
         prodForCart.quantity = quantity;
-        console.log(prodForCart);
+        //console.log(prodForCart);
 
+        /**
+         * This is the function that we create in the global provider.
+         * Here is where gets the products.
+         */
         addToCart(prodForCart);
     }
 
