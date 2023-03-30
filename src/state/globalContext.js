@@ -13,6 +13,7 @@ const globalContext = createContext({
     cart: [], //an array
     user: {}, //an object
 
+    getNumOfProducts: () => {},
     addToCart: () => {},
     removeFromCart: () => {}
 });

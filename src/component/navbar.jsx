@@ -1,8 +1,13 @@
 import { Link } from "react-router-dom";
 import "./navbar.css"
+import { useContext } from "react";
+import globalContext from "../state/globalContext";
 
 
 function Navbar() {
+
+    const getNumberOfProducts = useContext(globalContext).getNumOfProducts;
+
     return <div className="nav-bar">
         <div className="top">
             <img className='logo' src="./images/fs-logo.png" alt="" />
@@ -16,7 +21,9 @@ function Navbar() {
             <Link to={"/"}>Home</Link>
             <Link to={"/catalog"}> Catalog</Link>
             <Link to={"/about"}> About</Link>
-            <Link to={"/cart"} className="cart"><i class="fa fa-shopping-cart" aria-hidden="true"></i></Link>
+            <Link to={"/cart"} className="cart"><i class="fa fa-shopping-cart" aria-hidden="true"></i>
+            <sup className="qt-products">{getNumberOfProducts()}</sup>
+            </Link>
             <Link to={"/admin"}> Admin</Link>
         </nav>
 

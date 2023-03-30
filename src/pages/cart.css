@@ -1,3 +1,18 @@
-.shopping-cart{
+.shopping-cart-container{
     min-height: 61vh;
 }
+
+.shopping-cart{
+    display: flex;
+}
+
+.products{
+    flex: 3;
+    margin-right: 10px;
+}
+.receipt{
+    background-color: #F3F3F3;
+    flex:2;
+    margin-left: 10px;
+}
+
