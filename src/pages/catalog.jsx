@@ -13,13 +13,17 @@ function Catalog() {
       an emppty array as initial value (in case the catalog is empty)*/}
     const [products, setProducts] = useState([]);
 
-    {/*Variable for the Key of the products */}
+    {/*Variable for the Key of the products */ }
     const [category, setCategory] = useState([]);
 
-    {/*Variable for the list of products filtered */}
+    {/*Variable for the list of products filtered */ }
     const [prodsToDisplay, setProdsToDisplay] = useState([]);
 
+    const [searchedProducts, setSearchedProducts] = useState([]);
+
     let activeCategory = "";
+
+    let [title, setTitle] = useState();
 
     /*When the component load, do somenthin. 
     That is why we are using useEffect*/
@@ -30,9 +34,9 @@ function Catalog() {
 
 
     //Get the products from the Data Service
-    function loadCatalog() {
+    async function loadCatalog() {
         let service = new DataService();
-        let prods = service.getProducts();
+        let prods = await service.getProducts();
         console.log(prods);
         setProducts(prods); //Passing the values through  the useState
 
@@ -42,7 +46,7 @@ function Catalog() {
         setProdsToDisplay(prods);
     }
 
-    function filter(category){
+    function filter(category) {
         console.log(category);
 
         activeCategory = category;
@@ -50,9 +54,9 @@ function Catalog() {
         let list = []; //This works only inside the funtion, lets create an state variable.
 
         /*Find the products of the category and added them to the list */
-        for(let i=0; i<products.length;i++){
+        for (let i = 0; i < products.length; i++) {
             let prod = products[i];
-            if(prod.category == category){
+            if (prod.category == category) {
                 list.push(prod);
             }
         }
@@ -60,13 +64,36 @@ function Catalog() {
         setProdsToDisplay(list);
     }
 
-    function allPurses(){
+    function allPurses() {
         setProdsToDisplay(products);
+    }
+
+    function getTitle(e) {
+        let inputTitle = e.target.value;
+
+        setTitle(inputTitle);
+        //console.log(title);
+    }
+
+    async function search() {
+
+        let service = new DataService();
+        let productByTitle = await service.getProductByTitle(title);
+
+        setProdsToDisplay(productByTitle);
+        
+        //console.log(productByTitle);
+        //console.log(searchedProducts);
     }
 
     return (
         <div className="catalog">
-            <h2>I have {products.length} new products for you!</h2> 
+            <h2>I have {products.length} new products for you!</h2>
+
+            <div className="search">
+                <input className="search-box" placeholder="Find a bag" onChange={getTitle} ></input>
+                <button className="search-btn" onClick={search}>Search</button>
+            </div>
 
             {/*Activity class 2
             <Product></Product>
@@ -84,17 +111,18 @@ function Catalog() {
             {/*Here we added a btn-filter class of bootstrap, but I am not using boostrap*/}
             <button onClick={allPurses} className="category-btn">All purses</button>
 
-            {category.map(c => <button key={c} onClick={()=>filter(c)} className="category-btn">{c}</button>)}
+            {category.map(c => <button key={c} onClick={() => filter(c)} className="category-btn">{c}</button>)}
             <br></br>
 
             {/*Displaying all the products
             {products.map((p) => (<Product key={p._id} data = {p}></Product>))}*/}
 
             {/*Displaying the products by categories*/}
-            {prodsToDisplay.map((p) => (<Product key={p._id} data = {p}></Product>))}
-
+            {prodsToDisplay.map((p) => (<Product key={p._id} data={p}></Product>))}
 
             
+            {/*{searchedProducts.map((p) => (<Product key={p._id} data={p}></Product>))}*/}
+
         </div>
     );
 }

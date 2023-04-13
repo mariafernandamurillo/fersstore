@@ -16,7 +16,8 @@ const globalContext = createContext({
     getTotalToPay: () => {},
     getNumOfProducts: () => {},
     addToCart: () => {},
-    removeFromCart: () => {}
+    removeFromCart: () => {},
+    searchProduct: () => {}
 });
 
 //Note: A file only can export one thing as default

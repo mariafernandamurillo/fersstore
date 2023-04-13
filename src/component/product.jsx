@@ -52,7 +52,7 @@ function Product(props) {
         <div className="product">
             <h5>{props.data.title}</h5>
 
-            <img className="image-product" src={props.data.image} alt="" />
+            <img className="image-product" src={"../images/" + props.data.image} alt="" />
 
             <div className="prices">
                 <label>Price <span>${props.data.price.toFixed(2)}</span></label>

@@ -17,7 +17,7 @@ function ProductInCart(prod) {
                 <div className="a-product-in-cart">
 
                     <div className="product-image">
-                        <img className="image-product" src={prod.data.image} alt="image" />
+                        <img className="image-product" src={"../images/" + prod.data.image} alt="image" />
                     </div>
 
                     <div className="product-data">

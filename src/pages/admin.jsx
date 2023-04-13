@@ -2,6 +2,7 @@ import "./admin.css"
 
 import { useState } from "react";
 import { getByTitle } from "@testing-library/react";
+import DataService from "../dataServices/dataService";
 
 function Admin() {
 
@@ -34,9 +35,23 @@ function Admin() {
 
     function saveProduct() {
         console.log(product);
+
+        //Create a copy to parse price to number
+        let copy = { ...product };
+        copy.price = parseFloat(copy.price);
+
+        let service = new DataService();
+        service.saveProduct(copy);
+
+        setProduct({
+            title: '',
+            image: '',
+            category: '',
+            price: ''
+        });
     }
 
-    function handleDiscountText(e){
+    function handleDiscountText(e) {
         const value = e.target.value; //the value of the input
         const name = e.target.name; //the "id" of the input
 
@@ -46,8 +61,21 @@ function Admin() {
     }
 
     function saveDiscount() {
+        let copy = { ...discount };
+        copy.discount = parseFloat(copy.discount);
+
+        let service = new DataService();
+        service.saveDiscount(copy);
+
+        setDiscount({
+            code: '',
+            discount: ''
+        });
+
         console.log(discount);
     }
+
+
 
     return (
         <div className="Admin">
@@ -58,22 +86,22 @@ function Admin() {
 
                     <div className="product-name-content product-attribute">
                         <label>Name </label>
-                        <input name="title" onChange={handleTextChange} className="ip-product-name ip-text" type="text" />
+                        <input value={product.title} name="title" onChange={handleTextChange} className="ip-product-name ip-text" type="text" />
                     </div>
 
                     <div className="product-category-content product-attribute">
                         <label>Category </label>
-                        <input name="category" onChange={handleTextChange} className="ip-category-name ip-text" type="text" />
+                        <input value={product.category} name="category" onChange={handleTextChange} className="ip-category-name ip-text" type="text" />
                     </div>
 
                     <div className="product-price-content product-attribute">
                         <label>Price </label>
-                        <input name="price" onChange={handleTextChange} className="ip-price-name ip-text" type="text" />
+                        <input value={product.price} name="price" onChange={handleTextChange} className="ip-price-name ip-text" type="text" />
                     </div>
 
                     <div className="product-image-content product-attribute">
                         <label>Image </label>
-                        <input name="image" onChange={handleTextChange} className="ip-image-name ip-text" type="text" />
+                        <input value={product.image} name="image" onChange={handleTextChange} className="ip-image-name ip-text" type="text" />
                     </div>
                     <div className="btn-save">
                         <button className="btn-primary" type="button" onClick={saveProduct}>Save Product</button>
@@ -84,12 +112,12 @@ function Admin() {
                     <label className="lbl-subtitle">New discount</label>
                     <div className="product-attribute">
                         <label>Code </label>
-                        <input name="code" onChange={handleDiscountText} className="ip-text" type="text" />
+                        <input value={discount.code} name="code" onChange={handleDiscountText} className="ip-text" type="text" />
                     </div>
 
                     <div className="product-attribute">
                         <label>Discount </label>
-                        <input name="discount" onChange={handleDiscountText} className="ip-text" type="text" />
+                        <input value={discount.discount} name="discount" onChange={handleDiscountText} className="ip-text" type="number" />
                     </div>
 
                     <div className="btn-save">

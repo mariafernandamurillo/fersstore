@@ -8,6 +8,7 @@ import Home from './pages/home';
 import About from './pages/about';
 import Cart from './pages/cart';
 import Admin from './pages/admin';
+import Payment from './pages/payment';
 import 'font-awesome/css/font-awesome.min.css';
 
 /*import "bootstrap/dist/css/bootstrap.min.css";
@@ -16,9 +17,10 @@ import "bootstrap/dist/js/bootstrap.min.js";*/
 /*A pachakes to hide and show components*/
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import GlobalProvider from './state/globalProvider';
+import Search from './pages/search';
 
 //import QuantityPicker from './component/quantityPicker';
-
+ 
 function App() {
   return (
     <div className="App">
@@ -41,6 +43,8 @@ function App() {
             <Route path='/about' element={<About />}></Route>
             <Route path='/cart' element={<Cart />}></Route>
             <Route path='/admin' element={<Admin />}></Route>
+            <Route path='/payment' element={<Payment />}></Route>
+            <Route path='/search' element={<Search />}></Route>
           </Routes>
 
           <Footer></Footer>

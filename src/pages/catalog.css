@@ -19,3 +19,7 @@ h1{
     background: #FFFFFF;
     cursor: pointer;
 }
+
+.catalog h2{
+    margin-top: 40px;
+}

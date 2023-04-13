@@ -2,8 +2,7 @@ import { Link } from "react-router-dom";
 import "./navbar.css"
 import { useContext } from "react";
 import globalContext from "../state/globalContext";
-
-
+ 
 function Navbar() {
 
     /*
@@ -29,11 +28,7 @@ function Navbar() {
             </Link>
             <Link to={"/admin"}> Admin</Link>
         </nav>
-
-        <div className="search">
-            <input className="search-box" placeholder="Find a bag"></input>
-            <button className="search-btn">Search</button>
-        </div>
+        
     </div>;
 }
 

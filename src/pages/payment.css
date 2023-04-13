@@ -1,0 +1,56 @@
+.payment-main {
+    min-height: 61vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    position: relative;
+}
+
+.form-payment{
+    width: 500px;
+    height: 270px;
+}
+
+.form-item{
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    margin-bottom: 10px;
+}
+
+.expery-security{
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+.expiry{
+    margin-right: 20px;
+}
+
+.ip-long{
+    width: 500px;
+}
+
+.buttons{
+    display: flex;
+    flex-direction: row;
+
+    position: absolute;
+    top: 380px;
+    left: 850px;
+}
+
+.next{
+    background-color: #16B4F2;
+    border: 1px solid #16B4F2;
+}
+
+.cancel{
+    margin-right: 20px;
+}
+
+.lbl-item{
+    margin-bottom: 5px;
+}

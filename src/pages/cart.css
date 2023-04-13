@@ -1,43 +1,49 @@
-.shopping-cart-container{
+.shopping-cart-container {
     min-height: 61vh;
 }
 
-.shopping-cart{
+.shopping-cart-container h2{
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+.shopping-cart {
     display: flex;
 }
 
-.products{
+.products {
     flex: 3;
     margin-right: 10px;
 }
-.receipt{
-    flex:2;
+
+.receipt {
+    flex: 2;
     margin-left: 10px;
     margin-right: 10px;
-    min-height: 450px;
+    min-height: 360px;
     height: max-content;
     border: solid 1px #F3F3F3;
     border-radius: 3px;
+    padding-bottom: 10px;
 }
 
-.receipt-hidden{
+.receipt-hidden {
     display: none;
-} 
+}
 
-.receip-header{
+.receip-header {
     position: relative;
     background-color: #F3F3F3;
     height: 80px;
 }
 
-.receipt img{
+.receipt img {
     width: 70px;
     position: absolute;
     top: 5px;
     left: 10px;
 }
 
-.order-confirmation{
+.order-confirmation {
     /*Position*/
     position: absolute;
     top: 30px;
@@ -49,7 +55,7 @@
     text-transform: uppercase;
 }
 
-.totalToPay{
+.totalToPay {
     margin-top: 20px;
     display: flex;
     flex-direction: column;
@@ -57,33 +63,51 @@
     align-items: center;
 }
 
-.totalToPay span{
+.total-to-pay {
+    margin-top: 20px;
+}
+
+.totalToPay span {
     font-weight: 600;
 }
 
-.totalToPay :last-child{
-    margin-top: 20px;
-    margin-bottom: 10px;
+.totalToPay-discount{
+    margin-top: 35px;
     font-size: 25px;
-    text-decoration: un;
+    display: block;
 }
 
-.btn-cancel{
-    margin-top: 70px;
+.totalToPay-discount-hiden {
+    margin-top: 35px;
+    font-size: 25px;
+    display: none;
+}
+
+.btn-cancel {
+    margin-top: 40px;
     margin-right: 5px;
 }
 
-.btn-pay{
-    margin-top: 30px;
+.btn-pay {
+    margin-top: 10px;
     margin-left: 5px;
     background-color: #16B4F2;
-    border: 1px solid #16B4F2;;
+    border: 1px solid #16B4F2;
 }
 
-.dicount{
-    margin-top: 50px;
+.dicount {
+    margin-top: 30px;
 }
 
-.btn-apply{
+.btn-apply {
     margin-left: 10px;
+}
+
+.span-total-to-pay{
+    font-style: italic;
+    text-decoration: line-through #FE4543 3px;
+}
+
+.link-button{
+    text-decoration: none;
 }
